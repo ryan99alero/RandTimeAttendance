@@ -9,7 +9,7 @@ ENV_FILE="/opt/RandTimeAttendance/config/DB_Environment_Variables"
 mkdir -p /opt/RandTimeAttendance/config
 
 # Prompt for environment variable values
-read -p "Enter DB_PASS: " db_pass
+read -rp "Enter DB_PASS: " db_pass
 
 # Set environment variable values
 db_host="127.0.0.1"

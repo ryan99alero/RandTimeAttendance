@@ -17,4 +17,3 @@ if (!$conn) {
 mysqli_set_charset($conn, "utf8");
 
 // Rest of your database connection code
-?>
