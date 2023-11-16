@@ -1,24 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-</head>
-<body>
-<div class="login-container">
-    <form action="../php/login.php" method="post">
-        <h2>Login</h2>
-        <div class="input-group">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" required>
-        </div>
-        <div class="input-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
-        </div>
-        <button type="submit">Login</button>
-        <a href="forgot_password.html">Forgot Password?</a>
-    </form>
-</div>
-</body>
-</html>
+<?php
+session_start();
+// Include your database config files and other necessary files
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Validate credentials
+    // If valid:
+    $_SESSION['loggedin'] = true;
+    $_SESSION['username'] = $username; // or other user identifier
+
+    // Redirect to the main page
+    header("Location: ../index.php");
+    exit;
+}
+// Handle invalid credentials or form submission
+?>
